@@ -30,3 +30,9 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore simplecov coverage
+/coverage
+
+/tags
+.DS_Store
