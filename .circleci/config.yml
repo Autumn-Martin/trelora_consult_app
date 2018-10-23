@@ -16,22 +16,22 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.1-node-browse
     steps:
-        - checkout
-        - restore_cache:
-          keys:
-            - bundle-install-{{ checksum "Gemfile.lock"}}
-            - bundle-install-
-        - run:
-          name: install dependencies
-          command: bundle install --path vendor/bundle
+      - checkout
+      - restore_cache:
+        keys:
+          - bundle-install-{{ checksum "Gemfile.lock"}}
+          - bundle-install-
+      - run:
+        name: install dependencies
+        command: bundle install --path vendor/bundle
 
-        - save_cache:
-          key: bundle-install-{{ checksum "Gemfile.lock"}}
-          paths: vendor/bundle
+      - save_cache:
+        key: bundle-install-{{ checksum "Gemfile.lock"}}
+        paths: vendor/bundle
 
-        - run:
-          name: run tests
-          command: rspec
+      - run:
+        name: run tests
+        command: rspec
 
 workflows:
   version: 2
