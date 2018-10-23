@@ -5,7 +5,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/ruby:2.5.1-jesse-node
+      - image: circleci/ruby:2.5.1-node-browse
     steps:
       - checkout
       - run:
@@ -14,7 +14,7 @@ jobs:
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
   test:
     docker:
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: circleci/ruby:2.5.1-node-browse
     steps:
         - checkout
         - restore_cache:
