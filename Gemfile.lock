@@ -71,7 +71,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    cowsay (0.3.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
@@ -241,7 +240,6 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
-  cowsay
   factory_bot_rails
   faraday
   figaro
