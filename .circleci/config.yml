@@ -5,7 +5,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: circleci/ruby:2.5.1-jesse-node
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
-      steps:
+    steps:
         - checkout
         - restore_cache:
           keys:
