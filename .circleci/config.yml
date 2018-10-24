@@ -24,7 +24,7 @@ jobs:
       - image: circleci/postgres:10.4
         environment:
         - POSTGRES_USER: trelora_consult_app
-        - POSTGRES_DB: trelora_consult_app-test
+        - POSTGRES_DB: trelora_consult_app_test
         - POSTGRES_PASSWORD: ""
 
     steps:
