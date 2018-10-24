@@ -1,0 +1,24 @@
+/* oxygen-regular - latin */
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/oxygen-v7-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Oxygen Regular'), local('Oxygen-Regular'),
+       url('../fonts/oxygen-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/oxygen-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/oxygen-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/oxygen-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/oxygen-v7-latin-regular.svg#Oxygen') format('svg'); /* Legacy iOS */
+}
+
+body {
+  text-align: center;
+  font-family: "Oxygen", Helvetica, Arial, sans-serif;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, #7da72f, #94c63b);
+  outline: 0px solid transparent;
+  font-family: "Oxygen", Helvetica, Arial, sans-serif;
+}
