@@ -18,7 +18,8 @@ gem 'figaro'
 gem 'faraday'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.3'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails-ujs', '~> 0.1.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -32,7 +33,7 @@ end
 
 group :test do
   gem 'simplecov'
-  gem 'webmock'
+  # gem 'webmock'
 end
 
 group :development do
