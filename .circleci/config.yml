@@ -6,6 +6,15 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: trelora_consult_app-test
+          RAILS_ENV: test
+      - image: circleci/postgres:10.4-alpine
+        environment:
+          POSTGRES_USER: trelora_consult_app
+          POSTGRES_DB: trelora_consult_app-test
+          POSTGRES_PASSWORD: ""
     steps:
       - checkout
       - run:
