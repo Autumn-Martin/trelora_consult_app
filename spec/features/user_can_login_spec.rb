@@ -28,7 +28,7 @@ feature 'user login' do
     click_on 'Login'
 
     expect(current_path).to eq('/login')
-    expect(page).to have_content('Member Email Not Found.')
+    expect(page).to have_content('Member Email or Password Incorrect.')
   end
   scenario 'user unable to login with invalid password' do
     email = 'steven@trel.co'
@@ -42,6 +42,6 @@ feature 'user login' do
     click_on 'Login'
 
     expect(current_path).to eq('/login')
-    expect(page).to have_content('Member Password Incorrect.')
+    expect(page).to have_content('Member Email or Password Incorrect.')
   end
 end

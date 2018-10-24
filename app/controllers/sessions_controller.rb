@@ -4,15 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = MemberVerify.new(params[:login]).find_member
-    binding.pry
-    if user['data']['user']
+    response = MemberVerify.new(params[:login]).find_member
+    if response['data']['user']
+      session[:user_token] = response['data']['user']['HTTP_AUTH_TOKEN']
       redirect_to '/find'
-    elsif
-      flash[:notice] = 'Member Email Not Found.'
-      render :new
     else
-      flash[:notice] = 'Member Password Incorrect.'
+      flash[:notice] = 'Member Email or Password Incorrect.'
       render :new
     end
   end
