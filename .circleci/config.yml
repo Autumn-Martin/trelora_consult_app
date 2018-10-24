@@ -6,15 +6,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
-        environment:
-          PGHOST: 127.0.0.1
-          PGUSER: trelora_consult_app-test
-          RAILS_ENV: test
-      - image: circleci/postgres:10.4-alpine
-        environment:
-          POSTGRES_USER: trelora_consult_app
-          POSTGRES_DB: trelora_consult_app-test
-          POSTGRES_PASSWORD: ""
+
     steps:
       - checkout
       - run:
@@ -24,6 +16,17 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
+        environment:
+        - RAILS_ENV: test
+        - PGHOST: 127.0.0.1
+        - PGUSER: trelora_consult_app-test
+
+      - image: circleci/postgres:10.4
+        environment:
+        - POSTGRES_USER: trelora_consult_app
+        - POSTGRES_DB: trelora_consult_app-test
+        - POSTGRES_PASSWORD: ""
+
     steps:
       - checkout
       - restore_cache:
@@ -37,6 +40,10 @@ jobs:
       - save_cache:
           key: bundle-install-{{ checksum "Gemfile.lock"}}
           paths: vendor/bundle
+
+      - run:
+          name: create and migrate db
+          command: bundle exec rake db:{create,migrate}
 
       - run:
           name: run tests
