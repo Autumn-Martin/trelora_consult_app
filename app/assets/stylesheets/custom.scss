@@ -19,7 +19,7 @@ body {
   font-size: 2vh;
   margin-left: 20%;
   margin-right: 20%;
-  margin-top: 40%;
+  margin-top: 30%;
 }
 
 h1 {
@@ -28,7 +28,7 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 30%;
+  margin-bottom: 20%;
   font-size: 3vh;
 }
 
@@ -41,4 +41,13 @@ h2 {
   outline: 0px solid transparent;
   font-family: "Oxygen", Helvetica, Arial, sans-serif;
   margin-top: 8%;
+}
+
+.logo {
+  width: 80%;
+  margin-bottom: 10%;
+}
+
+label {
+  margin-bottom: 6%;
 }
