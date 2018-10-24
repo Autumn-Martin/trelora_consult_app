@@ -17,6 +17,7 @@ class MemberVerify
     member['password'] = @password
     request.body = member.to_json
     response = http.request(request)
+    JSON.parse(response.body)
   end
 
 
