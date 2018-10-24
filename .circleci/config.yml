@@ -19,11 +19,11 @@ jobs:
         environment:
         - RAILS_ENV: test
         - PGHOST: 127.0.0.1
-        - PGUSER: trelora_consult_app_test
+        - PGUSER: ubuntu
 
       - image: circleci/postgres:10.4
         environment:
-        - POSTGRES_USER: trelora_consult_app
+        - POSTGRES_USER: ubuntu
         - POSTGRES_DB: trelora_consult_app_test
         - POSTGRES_PASSWORD: ""
 
