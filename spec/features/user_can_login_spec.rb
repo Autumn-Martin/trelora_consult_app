@@ -7,8 +7,13 @@ feature 'user login' do
 
     visit '/login'
 
-    fill_in :login_email, with: email
-    fill_in :login_password, with: password
+    expect(page).to have_content("Listing Consultation Tool")
+    expect(page).to have_content("Member Email")
+    expect(page).to have_content("Password")
+    expect(page).to have_button("Login")
+
+    fill_in :email, with: email
+    fill_in :password, with: password
 
     click_on 'Login'
 
@@ -22,11 +27,11 @@ feature 'user login' do
 
     visit '/login'
 
-    fill_in :login_email, with: email
-    fill_in :login_password, with: password
+    fill_in :email, with: email
+    fill_in :password, with: password
+    save_and_open_page
 
     click_on 'Login'
-
     expect(current_path).to eq('/login')
     expect(page).to have_content('Member Email or Password Incorrect.')
   end
@@ -36,8 +41,8 @@ feature 'user login' do
 
     visit '/login'
 
-    fill_in :login_email, with: email
-    fill_in :login_password, with: password
+    fill_in :email, with: email
+    fill_in :password, with: password
 
     click_on 'Login'
 

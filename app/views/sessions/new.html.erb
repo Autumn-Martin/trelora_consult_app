@@ -1,11 +1,17 @@
-<%= form_for :login do |f| %>
+<%= image_tag("TRELORA-Logo.png", class:"logo")%>
 
-<%= f.label :email %>
-<%= f.text_field :email %>
+<h2>Listing Consultation Tool</h2>
 
-<%= f.label :password %>
-<%= f.text_field :password %>
-
-<%= f.submit 'Login' %>
-
-<% end %>
+<div>
+  <%= form_tag login_path do %>
+    <div class="form-group">
+      <%= label_tag :email, "Member Email" %>
+      <%= email_field_tag :email, nil, class: "form-control", 'aria-describedby' => "emailHelp" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, class: 'form-control' %>
+    </div>
+    <%= submit_tag "Login", class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>
