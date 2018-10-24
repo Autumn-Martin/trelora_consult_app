@@ -19,7 +19,7 @@ jobs:
         environment:
         - RAILS_ENV: test
         - PGHOST: 127.0.0.1
-        - PGUSER: trelora_consult_app-test
+        - PGUSER: trelora_consult_app_test
 
       - image: circleci/postgres:10.4
         environment:
