@@ -14,11 +14,31 @@
 
 body {
   text-align: center;
+  background-color: blanchedalmond;
   font-family: "Oxygen", Helvetica, Arial, sans-serif;
+  font-size: 2vh;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 40%;
+}
+
+h1 {
+  margin-bottom: 10%;
+  font-size: 5vh;
+}
+
+h2 {
+  margin-bottom: 30%;
+  font-size: 3vh;
+}
+
+.form-control {
+  margin-bottom: 8%;
 }
 
 .btn-primary {
   background-image: linear-gradient(to right, #7da72f, #94c63b);
   outline: 0px solid transparent;
   font-family: "Oxygen", Helvetica, Arial, sans-serif;
+  margin-top: 8%;
 }
