@@ -29,8 +29,8 @@ feature 'user login' do
 
     fill_in :email, with: email
     fill_in :password, with: password
-
     click_on 'Login'
+    
     expect(current_path).to eq('/login')
     expect(page).to have_content('Member Email or Password Incorrect.')
   end
@@ -42,7 +42,6 @@ feature 'user login' do
 
     fill_in :email, with: email
     fill_in :password, with: password
-
     click_on 'Login'
 
     expect(current_path).to eq('/login')
