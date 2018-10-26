@@ -9,7 +9,7 @@ feature 'A user' do
     expect(page).to have_button("Find Location")
   end
   scenario 'can view info about location' do
-    fill_in :address, with: "1860 S Marion St, Denver, CO 80210"
+    fill_in :properties_address, with: "1860 S Marion St, Denver, CO 80210"
     click_on "Find Location"
 
     expect(current_path).to eq('/prepare')
