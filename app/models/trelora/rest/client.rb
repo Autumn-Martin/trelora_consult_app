@@ -22,9 +22,10 @@ module Trelora
       end
       
       private
-        def member_service
-          MemberService.new
-        end 
+      
+      def member_service
+        MemberService.new
+      end 
     end
   end
 end
