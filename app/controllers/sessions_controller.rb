@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    response = MemberVerify.new(params).find_member
-    if response['data']['user']
-      session[:user_token] = response['data']['user']['HTTP_AUTH_TOKEN']
+    client = Trelora::REST::Client.new(params)
+    if client.authenticate! == 'success'
+      session[:user_token] = client.token
       redirect_to '/find'
     else
       flash[:notice] = 'Member Email or Password Incorrect.'
