@@ -1,10 +1,11 @@
 <h1>Pricing Location Address</h1>
 
-<%= form_for :properties do |f| %>
-
-<%= f.label :address %>
-<%= f.text_field :address %>
-
-<%= f.submit 'Find Location' %>
-
+<div>
+<%= form_tag prepare_path, method: :get do %>
+  <div>
+    <%= label_tag :address %>
+    <%= text_field_tag :address %>
+  </div>
+  <%= submit_tag 'Find Location' %>
 <% end %>
+</div>
