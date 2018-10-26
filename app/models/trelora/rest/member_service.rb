@@ -15,7 +15,7 @@ module Trelora
         
         private 
           def parse_url
-            URI.parse('https://www.trylora.com/api/v0/turing/members')
+            URI.parse(ENV['member_endpoint'])
           end
       end 
     end 
