@@ -29,7 +29,6 @@ feature 'user login' do
 
     fill_in :email, with: email
     fill_in :password, with: password
-    save_and_open_page
 
     click_on 'Login'
     expect(current_path).to eq('/login')
