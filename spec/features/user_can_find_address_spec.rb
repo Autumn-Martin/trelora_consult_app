@@ -2,6 +2,16 @@ require 'rails_helper'
 
 feature 'A user' do
   before do
+    visit '/login'
+
+    email = 'steven@trel.co'
+    password = 'password'
+
+    fill_in :email, with: email
+    fill_in :password, with: password
+
+    click_on "Login"
+
     visit '/find'
   end
   scenario 'can search for location' do
