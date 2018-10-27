@@ -21,6 +21,7 @@ feature 'user login' do
     expect(page).to have_content('Pricing Location Address')
     expect(page).to have_button('Find Location')
   end
+  
   scenario 'user unable to login with invalid email' do
     email = 'invalid@trel.co'
     password = 'password'
@@ -34,6 +35,7 @@ feature 'user login' do
     expect(current_path).to eq('/login')
     expect(page).to have_content('Member Email or Password Incorrect.')
   end
+  
   scenario 'user unable to login with invalid password' do
     email = 'steven@trel.co'
     password = 'wrong'
