@@ -4,13 +4,12 @@ require "uri"
 class PrepareController < ApplicationController
   def show
     token = session[:user_token]
-    address = session[:addresses]
-
-    params = {address: address[0],
+    defined_params = {address: params["q"],
       HTTP_AUTH_TOKEN: token}
-    params = URI.encode_www_form(params)
+    
+    defined_params = URI.encode_www_form(defined_params)
 
-    address_uri = URI.parse("https://www.trylora.com/api/v0/turing/properties?#{params}")
+    address_uri = URI.parse("https://www.trylora.com/api/v0/turing/properties?#{defined_params}")
     http = Net::HTTP.new(address_uri.host, address_uri.port)
     http.use_ssl = true
 
