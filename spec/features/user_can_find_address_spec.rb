@@ -9,15 +9,16 @@ feature 'A user' do
 
     fill_in :email, with: email
     fill_in :password, with: password
-
     click_on "Login"
 
     visit '/find'
   end
+  
   scenario 'can search for location' do
     expect(page).to have_content("Pricing Location Address")
     expect(page).to have_button("Find Location")
   end
+  
   scenario 'can view info about location' do
     select "1860 South Marion Street Denver CO 80210", from: :q
     click_on "Find Location"
@@ -26,12 +27,15 @@ feature 'A user' do
     expect(page).to have_css('.name')
     expect(page).to have_css('.email')
     expect(page).to have_css('.phone')
+    expect(page).to have_css('.coordinates')
     expect(page).to have_css('.opted_in')
     expect(page).to have_css('.found_us')
     expect(page).to have_css('.estimate')
     expect(page).to have_css('.enthusiasm')
     expect(page).to have_css('.timing')
     expect(page).to have_css('.adopter_type')
+    expect(page).to have_css('.updates')
     expect(page).to have_css('.stage')
+    expect(page).to have_css('.size')  
   end
 end
