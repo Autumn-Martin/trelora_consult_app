@@ -7,7 +7,7 @@ feature 'A user' do
 
     expect(page).to have_field(:about_the_home)
     expect(page).to have_field(:recommended_list_price)
-    expect(page).to have_selector(:update_client_enthusiasm)
+    expect(page).to have_field(:update_client_enthusiasm)
     expect(page).to have_field(:buyer_agent_commission)
     expect(page).to have_field(:about_the_seller)
     expect(page).to have_field(:credit_card_number)

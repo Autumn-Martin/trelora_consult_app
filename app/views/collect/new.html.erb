@@ -1,0 +1,34 @@
+<div>
+  <%= form_tag collect_path, method: :post do %>
+    <div class="form-group">
+      <%= label_tag :about_the_home, "About The Home" %>
+      <%= text_area_tag :about_the_home, nil, class: "form-control", 'aria-describedby' => "aboutthehomeHelp" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :recommended_list_price %>
+      <%= text_field_tag :recommended_list_price, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :update_client_enthusiasm %>
+      <%= select_tag(:update_client_enthusiasm, options_for_select(['Hot', 'Medium', 'Mild']), class: 'form-control') %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :buyer_agent_commission %>
+      <%= text_field_tag :buyer_agent_commission, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :about_the_seller %>
+      <%= text_area_tag :about_the_seller, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :credit_card_number %>
+      <%= text_field_tag :credit_card_number, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :credit_card_expiration_date %>
+      <%= month_field_tag :credit_card_expiration_date, nil, class: 'form-control' %>
+    </div>
+    <%= submit_tag "Save", class: "btn btn-primary btn-lg" %>
+    <%= submit_tag "Save and Finish", class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>
