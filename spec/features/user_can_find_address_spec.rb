@@ -34,4 +34,28 @@ feature 'A user' do
     expect(page).to have_css('.adopter_type')
     expect(page).to have_css('.stage')
   end
+  scenario 'can search for location using text field' do
+
+    fill_in :new_q, with: "1860_south_marion_street-Denver-CO-80210"
+
+    click_on "Find Location"
+
+    expect(current_path).to eq('/prepare')
+  end
+  scenario 'fails to search when no wrong address is entered' do
+
+    fill_in :new_q, with: "wrong address"
+
+    click_on "Find Location"
+
+    expect(current_path).to eq('/find')
+    expect(page).to have_content('Address Not Found')
+  end
+  scenario 'fails to search when no input is entered' do
+
+    click_on "Find Location"
+
+    expect(current_path).to eq('/find')
+    expect(page).to have_content('Address Not Found')
+  end
 end
