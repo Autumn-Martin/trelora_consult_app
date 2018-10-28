@@ -4,9 +4,16 @@ require "uri"
 class PrepareController < ApplicationController
   def show
     token = session[:user_token]
+    session[:addresses].map do |unclean_address|
+      formatted_address = format_address(unclean_address)
+      if formatted_address == params["q"]
+        params["q"] = unclean_address
+      end
+    end
+
     defined_params = {address: params["q"],
       HTTP_AUTH_TOKEN: token}
-    
+
     defined_params = URI.encode_www_form(defined_params)
 
     address_uri = URI.parse("https://www.trylora.com/api/v0/turing/properties?#{defined_params}")
@@ -25,5 +32,16 @@ class PrepareController < ApplicationController
 
     @address = Address.new(address_data)
   end
-end
 
+  private
+  def format_address(unclean_address)
+    address_array = unclean_address.gsub(/[-_]/, " ").split
+    address_array.map do |word|
+    	if word.length <= 2
+    		word.upcase
+    	else
+    		 word.capitalize
+    	end
+    end.join(" ")
+  end
+end
