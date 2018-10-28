@@ -2,8 +2,7 @@
 
 <%= form_tag prepare_path, :method => :get do %>
 
-  <%= select_tag(:q, options_for_select(@addresses, params[:address])) %>
-
+  <%= select_tag(:q, options_for_select(@formatted_addresses, params[:address])) %>
 
   <%= submit_tag 'Find Location', name: "address" %>
 <% end %>

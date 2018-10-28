@@ -19,7 +19,7 @@ feature 'A user' do
     expect(page).to have_button("Find Location")
   end
   scenario 'can view info about location' do
-    select "1860_south_marion_street-Denver-CO-80210", :from => :q
+    select "1860 South Marion Street Denver CO 80210", from: :q
     click_on "Find Location"
 
     expect(current_path).to eq('/prepare')
