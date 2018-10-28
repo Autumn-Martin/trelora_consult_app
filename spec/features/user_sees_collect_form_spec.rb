@@ -17,6 +17,22 @@ feature 'A user' do
   end
 
   scenario 'fills the collect form' do
+    visit '/login'
+
+    email = 'steven@trel.co'
+    password = 'password'
+
+    fill_in :email, with: email
+    fill_in :password, with: password
+    click_on "Login"
+
+    expect(current_path).to eq( "/find")
+
+    select "1860 South Marion Street Denver CO 80210", from: :q
+    click_on "Find Location"
+
+    expect(current_path).to eq("/prepare")
+
     visit '/collect'
 
     fill_in :about_the_home, with: 'Very spacious'
@@ -28,5 +44,7 @@ feature 'A user' do
     fill_in :credit_card_expiration_date, with: 'Nov 22'
 
     click_on "Save"
+
+    expect(current_path).to eq('/collect')
   end
 end
