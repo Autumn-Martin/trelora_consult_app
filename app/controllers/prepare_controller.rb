@@ -22,7 +22,6 @@ class PrepareController < ApplicationController
     response = http.request(Net::HTTP::Get.new(address_uri.request_uri))
 
     address_data = JSON.parse(response.body)['result']
-
     @address = Address.new(address_data)
   end
 end
