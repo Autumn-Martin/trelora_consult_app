@@ -1,9 +1,16 @@
-<h1>Pricing Location Address</h1>
+<%= image_tag("TRELORA-Logo.png", class:"logo")%>
 
+<h2>Pricing Location Address</h2>
+<div>
 <%= form_tag prepare_path, :method => :get do %>
-
-  <%= select_tag(:q, options_for_select(@addresses, params[:address])) %>
-
-
-  <%= submit_tag 'Find Location', name: "address" %>
-<% end %>
+    <div class="form-group">
+      <%= label_tag :q, "Select your address" %>
+      <%= select_tag(:q, options_for_select(@addresses, params[:address]), include_blank: true) %>
+    </div>
+    <p>OR</p>
+    <div class="form-group">
+      <%= text_field_tag(:new_q, nil, placeholder: 'Enter address here...') %>
+    </div>
+    <%= submit_tag 'Find Location', name: "address", class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>
