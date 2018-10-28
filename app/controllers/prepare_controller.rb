@@ -26,3 +26,4 @@ class PrepareController < ApplicationController
     @address = Address.new(address_data)
   end
 end
+
