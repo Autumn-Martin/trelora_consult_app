@@ -14,7 +14,6 @@ feature 'user login' do
 
     fill_in :email, with: email
     fill_in :password, with: password
-
     click_on 'Login'
 
     expect(current_path).to eq('/find')
@@ -23,7 +22,6 @@ feature 'user login' do
   end
 
   xscenario 'user unable to login with invalid email' do
-
     email = 'invalid@trel.co'
     password = 'password'
 
@@ -31,14 +29,13 @@ feature 'user login' do
 
     fill_in :email, with: email
     fill_in :password, with: password
-
     click_on 'Login'
+    
     expect(current_path).to eq('/login')
     expect(page).to have_content('Member Email or Password Incorrect.')
   end
 
   xscenario 'user unable to login with invalid password' do
-
     email = 'steven@trel.co'
     password = 'wrong'
 
@@ -46,7 +43,6 @@ feature 'user login' do
 
     fill_in :email, with: email
     fill_in :password, with: password
-
     click_on 'Login'
 
     expect(current_path).to eq('/login')
