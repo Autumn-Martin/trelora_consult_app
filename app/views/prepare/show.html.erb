@@ -1,6 +1,3 @@
-
-
-----------------------------
 <nav class="navbar sticky-top navbar-light" style="background-color: #FFFFFF; text-align: left;">
   <a class="navbar-brand" href="#">
     <%= image_tag("TRELORA-Logo.png", class:"tiny_logo")%>
@@ -10,8 +7,8 @@
 </nav>
 <nav class="navbar navbar-dark bg-dark text-align: center;">
   <a class="navbar-brand" href="#">
-    <h3>Address: Some Address</h3>
-  </a>
+    <h3>Address: <%= @address.street%>, <%= @address.city %>, <%= @address.state %> <%= @address.zip %></h3>
+  </a>  
 </nav>
 <div class="card border-light mb-3" style="max-width: 150rem; text-align: left;">
   <div class="card-body">
@@ -41,14 +38,14 @@
           </tr>
           <tr>
             <th scope="col" class="coordinates"> Coordinates:</th>
-            <td>Some Coordinates</td>
+            <td></td>
           </tr>
           <tr>
             <th scope="col" class="opted_in"> Opted In:</th>
             <td><%= @address.opted_in %></td>
           </tr>
           <tr>
-            <th scope="col" class="found_us">Found Us Through:</th>
+            <th scope="col" class="found_us">Found Us:</th>
             <td><%= @address.found_us %></td>
           </tr>
           <tr>
@@ -69,19 +66,19 @@
           </tr>
           <tr>
             <th scope="col" class="updates">Updates:</th>
-            <td>Bla Bla Bla</td>
+            <td></td>
           </tr>
           <tr>
             <th scope="col" class="stage">Stage:</th>
             <td><%= @address.stage %></td>
           </tr>
           <tr>
-            <th scope="col">Retainer:</th>
-            <td>500</td>
+            <th scope="col" class="size">Size:</th>
+            <td><%= @address.baths %> Baths, <%= @address.beds %> Beds</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
->
+

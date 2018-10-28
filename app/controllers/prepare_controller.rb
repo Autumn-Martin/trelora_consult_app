@@ -25,11 +25,9 @@ class PrepareController < ApplicationController
     request['Content-Type'] = 'application/json'
     response.body = http.request(request)
 
-    # getting_response
     response = http.request(Net::HTTP::Get.new(address_uri.request_uri))
 
     address_data = JSON.parse(response.body)['result']
-
     @address = Address.new(address_data)
   end
 
