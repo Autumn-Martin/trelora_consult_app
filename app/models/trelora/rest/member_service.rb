@@ -1,7 +1,7 @@
 module Trelora
   module REST
-      class MemberService 
-        
+      class MemberService
+
         def retrieve_member(email, password)
           http = Net::HTTP.new(parse_url.host, parse_url.port)
           http.use_ssl = true
@@ -12,11 +12,11 @@ module Trelora
           post_request.body = member.to_json
           http.request(post_request)
         end
-        
-        private 
+
+        private
           def parse_url
-            URI.parse(ENV['member_endpoint'])
+            URI.parse('https://www.trylora.com/api/v0/turing/members')
           end
-      end 
-    end 
-  end 
+      end
+    end
+  end

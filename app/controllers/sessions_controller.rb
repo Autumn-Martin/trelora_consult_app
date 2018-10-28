@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
   end
 
@@ -7,6 +6,8 @@ class SessionsController < ApplicationController
     client = Trelora::REST::Client.new(params)
     if client.authenticate! == 'success'
       session[:user_token] = client.token
+      session[:addresses] = client.address
+
       redirect_to '/find'
     else
       flash[:notice] = 'Member Email or Password Incorrect.'

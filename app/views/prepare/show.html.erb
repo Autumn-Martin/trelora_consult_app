@@ -1,3 +1,6 @@
+
+
+----------------------------
 <nav class="navbar sticky-top navbar-light" style="background-color: #FFFFFF; text-align: left;">
   <a class="navbar-brand" href="#">
     <%= image_tag("TRELORA-Logo.png", class:"tiny_logo")%>
@@ -26,15 +29,15 @@
           </tr>
           <tr>
             <th scope="col">Name:</th>
-            <td>Some NameSome Name Some NameSome NameSome NameSome NameSome NameSome NameSome NameSome Name</td>
+            <td><%= @address.name %></td>
           </tr>
           <tr>
             <th scope="col">Email:</th>
-            <td>Some Email</td>
+            <td><%= @address.email %></td>
           </tr>
           <tr>
             <th scope="col">Phone:</th>
-            <td>Some Phone</td>
+            <td><%= @address.phone %></td>
           </tr>
           <tr>
             <th scope="col"> Coordinates:</th>
@@ -42,27 +45,27 @@
           </tr>
           <tr>
             <th scope="col"> Opted In:</th>
-            <td>Some Opted In</td>
+            <td><%= @address.opted_in %></td>
           </tr>
           <tr>
             <th scope="col">Found Us Through:</th>
-            <td>Referral </td>
+            <td><%= @address.found_us %></td>
           </tr>
           <tr>
             <th scope="col">Estimate:</th>
-            <td>Zillow Details</td>
+            <td>Zillow Details: <%= @address.zillow_estimate %></td>
           </tr>
           <tr>
             <th scope="col">Enthusiasm:</th>
-            <td>Interested</td>
+            <td><%= @address.enthusiasm %></td>
           </tr>
           <tr>
             <th scope="col">Timing:</th>
-            <td>Now</td>
+            <td><%= @address.timing %></td>
           </tr>
           <tr>
             <th scope="col">Adopter Type:</th>
-            <td>Early</td>
+            <td><%= @address.adopter_type %></td>
           </tr>
           <tr>
             <th scope="col">Updates:</th>
@@ -70,7 +73,7 @@
           </tr>
           <tr>
             <th scope="col">Stage:</th>
-            <td>ome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Emailome Email</td>
+            <td><%= @address.stage %></td>
           </tr>
           <tr>
             <th scope="col">Retainer:</th>
@@ -81,3 +84,4 @@
     </div>
   </div>
 </div>
+>
