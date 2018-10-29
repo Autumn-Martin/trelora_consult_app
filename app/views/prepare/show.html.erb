@@ -8,7 +8,7 @@
 <nav class="navbar navbar-dark bg-dark text-align: center;">
   <a class="navbar-brand" href="#">
     <h3>Address: <%= @address.street%>, <%= @address.city %>, <%= @address.state %> <%= @address.zip %></h3>
-  </a>  
+  </a>
 </nav>
 <div class="card border-light mb-3" style="max-width: 150rem; text-align: left;">
   <div class="card-body">
@@ -78,7 +78,7 @@
           </tr>
         </tbody>
       </table>
+      <%= link_to "Begin Visit", collect_path %>
     </div>
   </div>
 </div>
-
