@@ -31,7 +31,7 @@ class PrepareController < ApplicationController
     @address = Address.new(address_data)
     @duration = Duration.new(params[:controller], params[:action])
   end
-
+  
   private
   def format_address(unclean_address)
     address_array = unclean_address.gsub(/[-_]/, " ").split

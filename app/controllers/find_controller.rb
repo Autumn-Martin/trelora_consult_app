@@ -5,6 +5,11 @@ class FindController < ApplicationController
     @formatted_addresses = addresses.map do |unclean_address|
       format_address(unclean_address)
     end
+    
+    duration = Duration.new(params[:controller], params[:action])
+    unless duration.prepare_start_time == nil
+      flash[:notice] = "You left Prepare and have spent #{duration.total_prepare_time} on the prepare page"
+    end
   end
   
   private
