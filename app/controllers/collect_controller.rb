@@ -30,7 +30,7 @@ class CollectController < ApplicationController
                           email: 'steven@trel.co',
                           address: "1860_south_marion_street-Denver-CO-80210",
                           about_this_home: params[:about_the_home],
-                          recommended_list_price: params[:recommended_list_price],
+                          list_price: params[:recommended_list_price],
                           client_enthusiasm: params[:update_client_enthusiasm],
                           commission: params[:buyer_agent_commission],
                           about_the_seller: params[:about_the_seller],

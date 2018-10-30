@@ -71,8 +71,8 @@ feature 'A user' do
 
     visit '/collect'
 
-    fill_in :about_the_home, with: 'Spectacular'
-    # fill_in :recommended_list_price, with: '250900'
+    fill_in :about_the_home, with: 'Wooowie spectacular'
+    fill_in :recommended_list_price, with: '100000000'
     select 'Mild', from: :update_client_enthusiasm
     fill_in :buyer_agent_commission, with: '78%'
     fill_in :about_the_seller, with: 'Buying spaceship'
@@ -82,8 +82,9 @@ feature 'A user' do
     click_on 'Save and Finish'
 
     expect(current_path).to eq(success_path)
-    expect(page).to have_content('Spectacular')
+    expect(page).to have_content('Wooowie spectacular')
     expect(page).to have_content('78%')
+    expect(page).to have_content('100000000')
     expect(page).to have_content('Buying spaceship')
     expect(page).to have_content('****_****_****_****')
     expect(page).to have_content('Nov 50')
