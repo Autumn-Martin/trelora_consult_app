@@ -30,6 +30,7 @@ class PrepareController < ApplicationController
     address_data = JSON.parse(response.body)['result']
     @address = Address.new(address_data)
     @duration = Duration.new(params[:controller], params[:action])
+    @duration.prepare_start_time
   end
   
   private
