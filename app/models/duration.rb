@@ -10,13 +10,13 @@ class Duration
   
   def prepare_start_time
     if on_prepare
-      start_prepare_time = Time.current
+      start_prepare_time = Time.now
     end
   end
   
   def prepare_end_time
     if left_prepare
-      end_prepare_time = Time.current
+      end_prepare_time = Time.now
     end
   end
   
