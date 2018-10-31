@@ -1,21 +1,15 @@
-<!-- <nav class="navbar sticky-top navbar-light" style="background-color: #d3e8b0; text-align: left;"> -->
 <nav class="navbar sticky-top navbar-light" style="background-color: white; text-align: left; border-bottom: 0.5vh solid #7da72f">
-  <a class="navbar-brand" href="#" style="margin-bottom: 1vh">
+  <a class="navbar-brand" href="#" style="margin-bottom: 0.5vh">
     <%= image_tag("TRELORA-Logo.png", class:"tiny_logo")%>
   </a>
   <a class="font-weight-bold" style="color: #94c63b;" href="#"><h3>Prepare</h3></a>
-  <button class="btn btn-primary" type="button" href="#"><%= link_to collect_path, "Go to Collect" %></button>
-<!-- <%= link_to collect_path, "Go to Collect" %> -->
-<!-- <div>
-  <h3>Address: <%= @address.street%>, <%= @address.city %>, <%= @address.state %> <%= @address.zip %></h3>
-</div> -->
+  <%= link_to "Begin Visit", collect_path, class: "btn btn-primary btn-lg" %>
 </nav>
 <nav class="navbar navbar-dark bg-dark text-align: center;">
   <a class="navbar-brand" href="#">
     <h3>Address: <%= @address.street%>, <%= @address.city %>, <%= @address.state %> <%= @address.zip %></h3>
   </a>
 </nav>
-<<<<<<< HEAD
 <div>
   <div class="container" style="padding-top: 2vh">
     <div class="row justify-content-center">
@@ -148,77 +142,6 @@
           </table>
         </div>
       </div>
-=======
-<div class="card border-light mb-3" style="max-width: 150rem; text-align: left;">
-  <div class="card-body">
-    <div class="table-responsive">
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col" style="max-width: 10rem;"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="col"><h3>Listing Details</h3></th>
-          </tr>
-          <tr>
-            <th scope="col" class="name">Name:</th>
-            <td><%= @address.name %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="email">Email:</th>
-            <td><%= @address.email %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="phone">Phone:</th>
-            <td><%= @address.phone %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="coordinates"> Coordinates:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="col" class="opted_in"> Opted In:</th>
-            <td><%= @address.opted_in %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="found_us">Found Us:</th>
-            <td><%= @address.found_us %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="estimate">Estimate:</th>
-            <td>Zillow Details: <%= @address.zillow_estimate %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="enthusiasm">Enthusiasm:</th>
-            <td><%= @address.enthusiasm %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="timing">Timing:</th>
-            <td><%= @address.timing %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="adopter_type">Adopter Type:</th>
-            <td><%= @address.adopter_type %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="updates">Updates:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="col" class="stage">Stage:</th>
-            <td><%= @address.stage %></td>
-          </tr>
-          <tr>
-            <th scope="col" class="size">Size:</th>
-            <td><%= @address.baths %> Baths, <%= @address.beds %> Beds</td>
-          </tr>
-        </tbody>
-      </table>
-      <%= link_to "Begin Visit", collect_path %>
->>>>>>> 63bcf970acb5bddc2fc257d51c2c3baa22a3d743
     </div>
   </div>
 </div>
