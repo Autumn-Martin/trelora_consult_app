@@ -20,6 +20,7 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 h1 {
@@ -86,4 +87,10 @@ a:hover {
 
 .form-control {
   font-size: 100%;
+}
+
+.map-label {
+  background-color: #94c63b;
+  color: #353A3F;
+  text-shadow: 1px 1px #3B3BBF;
 }
