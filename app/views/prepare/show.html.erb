@@ -131,12 +131,20 @@
                 <td><%= @address.baths %> Baths, <%= @address.beds %> Beds</td>
               </tr>
               <tr>
-                <th scope="col" class="updates">Updates:</th>
-                <td></td>
+                <th scope="col" class="updates">Exterior:</th>
+                <td><%= @address.ext_updates %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="updates">Interior:</th>
+                <td><%= @address.int_updates %></td>
               </tr>
               <tr>
                 <th scope="col" class="stage">Stage:</th>
                 <td><%= @address.stage %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="stage">Zillow:</th>
+                <td>link</td>
               </tr>
             </tbody>
           </table>
@@ -144,4 +152,22 @@
       </div>
     </div>
   </div>
+  <div class="container" style="margin-top: 2vh; margin-bottom: 6vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="prepare-label card-header">Map:</h3>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="col" class="size"><% @address.street %>:</th>
+                <td>link</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
