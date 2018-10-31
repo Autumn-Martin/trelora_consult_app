@@ -24,11 +24,11 @@
               </tr>
               <tr>
                 <th scope="col" class="email">Email:</th>
-                <td><%= @address.email %></td>
+                <td><a href="mailto:<%@address.email%>"><%= @address.email %></a></td>
               </tr>
               <tr>
                 <th scope="col" class="phone">Phone:</th>
-                <td><%= @address.phone %></td>
+                <td><a href="tel:<%@address.phone%>"><%= @address.phone %></a></td>
               </tr>
             </tbody>
           </table>
