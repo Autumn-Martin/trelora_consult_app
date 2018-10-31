@@ -1,3 +1,26 @@
+<div> 
+<p id="timer"></p>
+  <script>
+    let init = function() {
+      let btn = document.querySelector('.btn-secondary'), 
+      startTime = new Date();
+      if (btn) {
+        btn.addEventListener('click', function() {
+        let miliSeconds = new Date() - startTime;
+        var hours = Math.floor((miliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((miliSeconds % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((miliSeconds % (1000 * 60)) / 1000);
+        
+        document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+        })
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      init();
+    }, false);
+  </script>
+</div>
+
 <div>
   <%= form_tag collect_path, method: :post do %>
     <div class="form-group">
@@ -28,30 +51,30 @@
       <%= label_tag :credit_card_expiration_date %>
       <%= month_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], class: 'form-control' %>
     </div>
-    <%= submit_tag "Save", name: "save", class: "btn btn-primary btn-lg" %>
-    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-secondary btn-lg" %>
+    <div>
+    <%= submit_tag "Save", name: "save", class: "btn btn-primary btn-lg" %>  
+    </div>
   <% end %>
 </div>
 
-<div> 
-  <script>
-    let init = function() {
-      let btn = document.querySelector('.btn-secondary'), 
-      startTime = new Date();
-      if (btn) {
-        btn.addEventListener('click', function() {
-        let miliSeconds = new Date() - startTime;
-          console.log(miliSeconds/1000 + " Seconds.")
-        })
-      }
+<button class ="finish" onclick="myFunction()"> <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-secondary btn-lg" %> </button>
+<div id="finishPopup">
+Listing Consultation Complete <br> Time in Home
+</div>
+
+<script>
+function myFunction() {
+    var popup = document.getElementById("finishPopup");
+    if (popup.style.display === "none") {
+        popup.style.display = "block";
+    } else {
+        popup.style.display = "none";
     }
-    document.addEventListener('DOMContentLoaded', function() {
-      init();
-    }, false);
-  </script>
-     
-     
-     
-     
-    
+}
+</script>
+
+
+
+
+
       
