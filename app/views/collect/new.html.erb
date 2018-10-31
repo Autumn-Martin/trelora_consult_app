@@ -29,6 +29,29 @@
       <%= month_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], class: 'form-control' %>
     </div>
     <%= submit_tag "Save", name: "save", class: "btn btn-primary btn-lg" %>
-    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg" %>
+    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-secondary btn-lg" %>
   <% end %>
 </div>
+
+<div> 
+  <script>
+    let init = function() {
+      let btn = document.querySelector('.btn-secondary'), 
+      startTime = new Date();
+      if (btn) {
+        btn.addEventListener('click', function() {
+        let miliSeconds = new Date() - startTime;
+          console.log(miliSeconds/1000 + " Seconds.")
+        })
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      init();
+    }, false);
+  </script>
+     
+     
+     
+     
+    
+      
