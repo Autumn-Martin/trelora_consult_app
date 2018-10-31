@@ -17,9 +17,11 @@ class PrepareController < ApplicationController
         HTTP_AUTH_TOKEN: token}
     else
       unless params["new_q"] == ""
-        clean_address = fix_manual_input_address(params["new_q"])
-        new_params = {address: clean_address,
-          HTTP_AUTH_TOKEN: token}
+        if fix_manual_input_address(params["new_q"])
+          clean_address = fix_manual_input_address(params["new_q"])
+          new_params = {address: clean_address,
+            HTTP_AUTH_TOKEN: token}
+        end
       end
     end
     unless new_params == nil
@@ -63,6 +65,8 @@ class PrepareController < ApplicationController
 
     def fix_manual_input_address(unclean_address)
       words = unclean_address.gsub(/[-_,]/, " ").split
-      "#{words.first(4).join("_")}" + "-" + "#{words[-3].capitalize}" + "-" + "#{words[-2].upcase}"+ "-" + "#{words[-1]}"
+      if words.count > 3 
+        "#{words.first(4).join("_")}" + "-" + "#{words[-3].capitalize}" + "-" + "#{words[-2].upcase}"+ "-" + "#{words[-1]}"
+      end
     end
 end

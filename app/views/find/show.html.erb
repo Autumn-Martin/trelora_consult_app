@@ -2,6 +2,13 @@
 
 
 <h2>Pricing Location Address</h2>
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-info">
+        <%= value %>
+  </div>
+<% end %>
+
 <div>
 <%= form_tag prepare_path, :method => :get do %>
   <div class="form-group">

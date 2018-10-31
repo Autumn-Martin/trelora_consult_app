@@ -13,12 +13,12 @@ feature 'A user' do
 
     visit '/find'
   end
-  
+
   scenario 'can search for location' do
     expect(page).to have_content("Pricing Location Address")
     expect(page).to have_button("Find Location")
   end
-  
+
   scenario 'can view info about location' do
     select "1860 South Marion Street Denver CO 80210", from: :q
     click_on "Find Location"
@@ -36,7 +36,7 @@ feature 'A user' do
     expect(page).to have_css('.adopter_type')
     expect(page).to have_css('.updates')
     expect(page).to have_css('.stage')
-    expect(page).to have_css('.size')  
+    expect(page).to have_css('.size')
   end
 
   scenario 'can search for location using text field' do
@@ -55,9 +55,18 @@ feature 'A user' do
 
     expect(current_path).to eq('/prepare')
   end
-  scenario 'fails to search when no wrong address is entered' do
+  scenario 'fails to search when wrong address is entered' do
 
     fill_in :new_q, with: "123 easy street, denver, co, 80210"
+
+    click_on "Find Location"
+
+    expect(current_path).to eq('/find')
+    expect(page).to have_content('Address Not Found')
+  end
+  scenario 'fails to search when wrong input is entered' do
+
+    fill_in :new_q, with: "sefhesk sldfjdso 999"
 
     click_on "Find Location"
 

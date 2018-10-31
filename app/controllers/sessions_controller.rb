@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
       redirect_to '/find'
     else
-      flash[:notice] = 'Member Email or Password Incorrect.'
+      flash.now[:notice] = 'Member Email or Password Incorrect.'
       render :new
     end
   end
