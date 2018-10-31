@@ -1,15 +1,117 @@
 <nav class="navbar sticky-top navbar-light" style="background-color: #FFFFFF; text-align: left;">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="#" style="margin-bottom: 1vh">
     <%= image_tag("TRELORA-Logo.png", class:"tiny_logo")%>
   </a>
   <a class="font-weight-bold" style="color: #A4C950;" href="#"><h3>Prepare</h3></a>
-  <button class="btn" type="button" style="text-align: right; background_color: #A4C950;" href="#"><h4>Go to Collect</h4></button>
+  <button class="btn-primary" type="button" style="text-align: right; background_color: #A4C950;" href="#"><h4>Go to Collect</h4></button>
 </nav>
 <nav class="navbar navbar-dark bg-dark text-align: center;">
   <a class="navbar-brand" href="#">
     <h3>Address: <%= @address.street%>, <%= @address.city %>, <%= @address.state %> <%= @address.zip %></h3>
-  </a>  
+  </a>
 </nav>
+<div style="background: #DDE2F6">
+  <div class="container" style="padding-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="card-header" style="margin-top: 1vh;">Client Contact:</h3>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="col" class="name">Name:</th>
+                <td><%= @address.name %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="email">Email:</th>
+                <td><%= @address.email %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="phone">Phone:</th>
+                <td><%= @address.phone %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="card-header" style="margin-top: 1vh">Client Details:</h3>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="col" class="opted_in"> Opted In:</th>
+                <td><%= @address.opted_in %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="found_us">Found Us:</th>
+                <td><%= @address.found_us %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="enthusiasm">Enthusiasm:</th>
+                <td><%= @address.enthusiasm %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="timing">Timing:</th>
+                <td><%= @address.timing %></td>
+              </tr>
+              <tr>
+                <th scope="col" class="adopter_type">Adopter Type:</th>
+                <td><%= @address.adopter_type %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="card-header" style="margin-top: 1vh">Pricing Estimates:</h3>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tbody>
+              <!-- <tr>
+                <th scope="col" class="name">Name:</th>
+                <td><%= @address.name %></td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="card-header" style="margin-top: 1vh">Listing Details:</h3>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="col" class="size">Size:</th>
+                <td><%= @address.baths %> Baths, <%= @address.beds %> Beds</td>
+              </tr>
+              <tr>
+                <th scope="col" class="updates">Updates:</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="col" class="stage">Stage:</th>
+                <td><%= @address.stage %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="card border-light mb-3" style="max-width: 150rem; text-align: left;">
   <div class="card-body">
     <div class="table-responsive">
@@ -21,9 +123,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!-- <tr>
             <th scope="col"><h3>Listing Details</h3></th>
-          </tr>
+          </tr> -->
           <tr>
             <th scope="col" class="name">Name:</th>
             <td><%= @address.name %></td>
@@ -81,4 +183,3 @@
     </div>
   </div>
 </div>
-
