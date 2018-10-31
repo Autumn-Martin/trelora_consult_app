@@ -41,7 +41,6 @@ h2 {
   background-image: linear-gradient(to right, #7da72f, #94c63b);
   outline: 0px solid transparent;
   font-family: "Oxygen", Helvetica, Arial, sans-serif;
-  margin-top: 8%;
   font-size: 30px;
   border-color: green;
 }
@@ -58,4 +57,8 @@ label {
 .tiny_logo {
   width: 30%;
   height: 30%;
+}
+
+.login-button {
+  margin-top: 8%
 }
