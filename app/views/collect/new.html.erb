@@ -1,5 +1,5 @@
 <div>
-  <%= form_tag collect_path, method: :post do %>
+  <%= form_tag collect_path, method: :post, remote: true do %>
     <div class="form-group">
       <%= label_tag :about_the_home, "About The Home" %>
       <%= text_area_tag :about_the_home, params[:about_the_home], class: "form-control", 'aria-describedby' => "aboutthehomeHelp" %>
@@ -64,7 +64,7 @@
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({timer: time})
-        debugger;
+
       });
       const content = await rawResponse.json();
 

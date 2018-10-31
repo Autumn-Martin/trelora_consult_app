@@ -11,7 +11,7 @@ class CollectController < ApplicationController
       render :new
     elsif params[:save_and_finish]
       updated = update_call
-      redirect_to action: :success, updated: updated
+      # redirect_to action: :success, updated: updated
     end
   end
 
