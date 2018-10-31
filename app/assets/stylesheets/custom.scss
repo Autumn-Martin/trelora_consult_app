@@ -41,10 +41,10 @@ h2 {
   background-image: linear-gradient(to right, #7da72f, #94c63b);
   outline: 0px solid transparent;
   font-family: "Oxygen", Helvetica, Arial, sans-serif;
-  margin-top: 8%;
   font-size: 30px;
   border-color: green;
 }
+
 
 .logo {
   width: 80%;
@@ -58,4 +58,32 @@ label {
 .tiny_logo {
   width: 30%;
   height: 30%;
+}
+
+.login-button {
+  margin-top: 8%
+}
+
+td {
+  text-align: left
+}
+
+.prepare-label {
+  background-color: #DDE2F6;
+  color: #353A3F;
+  margin-top: 1vh;
+  text-shadow: 1px 1px #3B3BBF;
+}
+
+
+a { color: inherit; }
+a:hover {
+  color: inherit;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.form-control {
+  font-size: 100%;
 }
