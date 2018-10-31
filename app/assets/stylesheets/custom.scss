@@ -45,6 +45,7 @@ h2 {
   border-color: green;
 }
 
+
 .logo {
   width: 80%;
   margin-bottom: 10%;
@@ -61,4 +62,23 @@ label {
 
 .login-button {
   margin-top: 8%
+}
+
+td {
+  text-align: left
+}
+
+.prepare-label {
+  background-color: #DDE2F6;
+  color: #353A3F;
+  margin-top: 1vh;
+  text-shadow: 1px 1px #3B3BBF;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid green;
+    margin: 1em 0;
+    padding: 0;
 }
