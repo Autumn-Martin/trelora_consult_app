@@ -27,7 +27,6 @@ feature 'A user' do
     expect(page).to have_css('.name')
     expect(page).to have_css('.email')
     expect(page).to have_css('.phone')
-    expect(page).to have_css('.coordinates')
     expect(page).to have_css('.opted_in')
     expect(page).to have_css('.found_us')
     expect(page).to have_css('.estimate')
