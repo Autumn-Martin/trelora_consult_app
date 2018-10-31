@@ -24,13 +24,13 @@ feature 'A user' do
     expect(page).to have_content('Phone: 3033333333')
     expect(page).to have_content('Opted In: true')
     expect(page).to have_content('Found Us: Google Search')
-    expect(page).to have_content('Estimate: Zillow Details: 704000')
     expect(page).to have_content('Enthusiasm: Interested in Moving Forward')
     expect(page).to have_content('Timing: Less than 2 Months')
     expect(page).to have_content('Adopter Type: Early Adopter')
-    expect(page).to have_content('Updates:')
+    expect(page).to have_content('Interior:')
+    expect(page).to have_content('Exterior:')
     expect(page).to have_content('Stage: Just getting interested in prepping home for sale. Wants to sell and use $$ to buy with us as well')
     expect(page).to have_content('Size: 3 Baths, 4 Beds')
-    expect(page).to have_button('Go to Collect')
+    expect(page).to have_link('Begin Visit')
   end
 end
