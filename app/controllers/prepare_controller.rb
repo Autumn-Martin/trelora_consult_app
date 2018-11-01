@@ -49,6 +49,12 @@ class PrepareController < ApplicationController
       flash[:notice] = "Address Not Found"
       redirect_to '/find'
     end
+    
+    if params["q"] != ""
+      session[:choosen_address] = params[:q]
+    elsif params["new_q"] != ""
+      session[:choosen_address] = params[:new_q]
+    end
   end
 
   private
@@ -65,7 +71,7 @@ class PrepareController < ApplicationController
 
     def fix_manual_input_address(unclean_address)
       words = unclean_address.gsub(/[-_,]/, " ").split
-      if words.count > 3 
+      if words.count > 3
         "#{words.first(4).join("_")}" + "-" + "#{words[-3].capitalize}" + "-" + "#{words[-2].upcase}"+ "-" + "#{words[-1]}"
       end
     end

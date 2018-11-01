@@ -6,7 +6,7 @@ class FindController < ApplicationController
       format_address(unclean_address)
     end
   end
-  
+
   private
   def format_address(unclean_address)
     address_array = unclean_address.gsub(/[-_]/, " ").split

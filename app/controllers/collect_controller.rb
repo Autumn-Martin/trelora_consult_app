@@ -18,6 +18,7 @@ class CollectController < ApplicationController
   def update_call
     token = session[:user_token]
     email = session[:email]
+    address = session[:choosen_address]
 
     update_uri = URI.parse("https://www.trylora.com/api/v0/turing/update_listing_consultation")
 
@@ -30,7 +31,7 @@ class CollectController < ApplicationController
     post_request['Content-Type'] = 'application/json'
     update_attributes = { HTTP_AUTH_TOKEN: token,
                           email: email,
-                          address: "1860_south_marion_street-Denver-CO-80210",
+                          address: address,
                           about_this_home: params[:about_the_home],
                           list_price: params[:recommended_list_price],
                           client_enthusiasm: params[:update_client_enthusiasm],
