@@ -17,3 +17,31 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+// $(document).ready(function() {
+// $('#save_and_finish').text('You are right 🦄');
+// $('[data-button]').css({"border-color": "red"});
+// });
+
+$(document).ready(function() {
+  $('[data-button]').on('click', function () {
+    var InputElement = $('#about_the_home')
+    var submitButtonElement = $('[data-button]')
+
+    const invalidMessage = "Please fill in the field."
+
+    function setInvalidCSS(element) {
+      $(element).css({"background-color": "red"});
+    }
+
+    function setMessage(message) {
+      $('.message').text(message);
+    }
+
+    if (InputElement.val() === '') {
+      setInvalidCSS(InputElement)
+      setMessage(invalidMessage)
+      event.preventDefault();
+    } else {}
+  });
+});
