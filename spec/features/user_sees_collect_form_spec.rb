@@ -7,7 +7,7 @@ feature 'A user' do
 
     expect(page).to have_field(:about_the_home)
     expect(page).to have_field(:recommended_list_price)
-    expect(page).to have_field(:update_client_enthusiasm)
+    expect(page).to have_field(:client_enthusiasm)
     expect(page).to have_field(:buyer_agent_commission)
     expect(page).to have_field(:about_the_seller)
     expect(page).to have_field(:credit_card_number)
@@ -37,7 +37,7 @@ feature 'A user' do
 
     fill_in :about_the_home, with: 'Spectacular'
     # fill_in :recommended_list_price, with: '250900'
-    select 'Mild', from: :update_client_enthusiasm
+    select 'Mild', from: :client_enthusiasm
     fill_in :buyer_agent_commission, with: '78%'
     fill_in :about_the_seller, with: 'Buying spaceship'
     fill_in :credit_card_number, with: '****_****_****_**42'
@@ -73,7 +73,7 @@ feature 'A user' do
 
     fill_in :about_the_home, with: 'Wooowie spectacular'
     fill_in :recommended_list_price, with: '99999999'
-    select 'Mild', from: :update_client_enthusiasm
+    select 'Mild', from: :client_enthusiasm
     fill_in :buyer_agent_commission, with: '78%'
     fill_in :about_the_seller, with: 'Buying spaceship'
     fill_in :credit_card_number, with: '****_****_****_****'
