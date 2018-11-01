@@ -18,11 +18,6 @@
 //= require popper
 //= require bootstrap-sprockets
 
-// $(document).ready(function() {
-// $('#save_and_finish').text('You are right 🦄');
-// $('[data-button]').css({"border-color": "red"});
-// });
-
 $(document).ready(function() {
 
   $('[data-button]').on('click', function () {
