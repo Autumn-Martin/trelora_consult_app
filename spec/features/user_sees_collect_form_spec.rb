@@ -12,7 +12,7 @@ feature 'A user' do
     expect(page).to have_field(:about_the_seller)
     expect(page).to have_field(:credit_card_number)
     expect(page).to have_field(:credit_card_expiration_date)
-    expect(page).to have_button("Save")
+    expect(page).to have_button("Save!")
     expect(page).to have_button("Save and Finish")
   end
 
@@ -43,7 +43,7 @@ feature 'A user' do
     fill_in :credit_card_number, with: '****_****_****_**42'
     fill_in :credit_card_expiration_date, with: 'Nov 50'
 
-    click_on 'Save'
+    click_on 'Save!'
 
     expect(current_path).to eq('/collect')
     expect(find_field(:about_the_home).value).to eq('Spectacular')
