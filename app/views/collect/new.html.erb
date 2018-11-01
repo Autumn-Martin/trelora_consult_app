@@ -8,34 +8,47 @@
 
 <div>
   <%= form_tag collect_path, method: :post do %>
+
     <div class="form-group">
       <%= label_tag :about_the_home, "About The Home" %>
-      <%= text_area_tag :about_the_home, params[:about_the_home], class: "form-control", 'aria-describedby' => "aboutthehomeHelp" %>
+      <%= text_area_tag :about_the_home, params[:about_the_home], placeholder: "Please describe details about the home", class: "form-control", 'aria-describedby' => "aboutthehomeHelp" %>
     </div>
+
     <div class="form-group">
       <%= label_tag :recommended_list_price %>
-      <%= text_field_tag :recommended_list_price, params[:recommended_list_price], class: 'form-control' %>
+      <%= number_field_tag :recommended_list_price, params[:recommended_list_price], placeholder: "IE, 450000", class: 'form-control' %>
     </div>
+
+
     <div class="form-group">
-      <%= label_tag :update_client_enthusiasm %>
-      <%= select_tag(:update_client_enthusiasm, options_for_select(['Hot', 'Medium', 'Mild']), class: 'form-control') %>
+      <%= label_tag :client_enthusiasm %>
+      <%= select_tag(:client_enthusiasm, options_for_select(['Hot', 'Medium', 'Mild']), class: 'form-control', prompt: "Select Enthusiasm") %>
     </div>
+
+
     <div class="form-group">
       <%= label_tag :buyer_agent_commission %>
-      <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission], class: 'form-control' %>
+      <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission], placeholder: "IE, 2.8% or $3000", class: 'form-control' %>
     </div>
+
     <div class="form-group">
       <%= label_tag :about_the_seller %>
-      <%= text_area_tag :about_the_seller, params[:about_the_seller], class: 'form-control' %>
+      <%= text_area_tag :about_the_seller, params[:about_the_seller], placeholder: "Tell us about the seller", class: 'form-control' %>
     </div>
+
     <div class="form-group">
       <%= label_tag :credit_card_number %>
-      <%= text_field_tag :credit_card_number, params[:credit_card_number], class: 'form-control' %>
+      <%= text_field_tag :credit_card_number, params[:credit_card_number], placeholder: "Enter Credit Card Number Here", class: 'form-control' %>
     </div>
+
     <div class="form-group">
       <%= label_tag :credit_card_expiration_date %>
       <%= month_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], class: 'form-control' %>
     </div>
-    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg" %>
+
+    <p class='message'></p>
+
+    <%= submit_tag "Save", name: "save", class: "btn btn-primary btn-lg" %>
+    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg", data: {'button' => true} %>
   <% end %>
 </div>

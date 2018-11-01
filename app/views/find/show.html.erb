@@ -13,7 +13,7 @@
 <%= form_tag prepare_path, :method => :get do %>
   <div class="form-group">
     <%= label_tag :q, "Select your address" %>
-    <%= select_tag(:q, options_for_select(@formatted_addresses, params[:address]), prompt: "Select Address", include_blank: true, class: 'form-control') %>
+    <%= select_tag(:q, options_for_select(@formatted_addresses, params[:address]), prompt: "Select Address", class: 'form-control') %>
   </div>
   <p>Or enter an address</p>
   <div class="form-group">
