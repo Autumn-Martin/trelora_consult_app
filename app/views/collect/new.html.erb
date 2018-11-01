@@ -17,7 +17,6 @@
       <%= number_field_tag :recommended_list_price, params[:recommended_list_price], placeholder: "IE, 450000", class: 'form-control' %>
     </div>
 
-
     <div class="form-group">
       <%= label_tag :client_enthusiasm %>
       <%= select_tag(:client_enthusiasm, options_for_select(['Hot', 'Medium', 'Mild']), class: 'form-control', prompt: "Select Enthusiasm") %>
@@ -44,7 +43,7 @@
     </div>
       <p class='message'></p>
     <div>
-      <%= submit_tag "Save", name: "save", class: "btn btn-primary btn-lg" %>
+      <%= submit_tag "Save!", name: "save", class: "btn btn-primary btn-lg" %>
       <div class ="finish" onclick="openPopup()"> <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg", data: {'button' => true} %> </div>
     </div>
   <% end %>
@@ -53,16 +52,18 @@
 <div class="popup" id="finishPopup">
   <p style="margin: 2%"> Listing Consultation Complete</p>
   <p id="timer"></p>
-  <button style="margin: 2%" type="button" class="btn btn-outline-primary" onclick="closePopup()">OK</button>
 </div>
 
 <script>
+  var pop = document.getElementById("finishPopup");
+
   function openPopup() {
-      document.getElementById("finishPopup").style.display = "block";
-  }
-  function closePopup() {
-      document.getElementById("finishPopup").style.display = "none";
-  }
+      if (document.getElementById("about_the_home").value.length > 0 && document.getElementById("recommended_list_price").value.length > 0 && document.getElementById("buyer_agent_commission").value.length > 0 && document.getElementById("about_the_seller").value.length > 0 && document.getElementById("credit_card_number").value.length > 0 && document.getElementById("credit_card_expiration_date").value.length > 0) { 
+        pop.style.display = "block";
+      } else {
+        pop.style.display = "none";
+      }
+    }
 
   let init = function() {
     let btn = document.querySelector('[data-button]'), 
