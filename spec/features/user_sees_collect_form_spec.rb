@@ -36,7 +36,7 @@ feature 'A user' do
     visit '/collect'
 
     fill_in :about_the_home, with: 'Spectacular'
-    # fill_in :recommended_list_price, with: '250900'
+    fill_in :recommended_list_price, with: '250900'
     select 'Mild', from: :update_client_enthusiasm
     fill_in :buyer_agent_commission, with: '78%'
     fill_in :about_the_seller, with: 'Buying spaceship'
