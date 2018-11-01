@@ -165,14 +165,14 @@
     <div class="row justify-content-center">
       <div class="card text-center col-12">
         <script>
-          var lat_var = <%= @address.lat %>;
-          var long_var = <%= @address.long %>;
-
           function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: lat_var, lng: long_var},
-              zoom: 16 });
-            var marker = new google.maps.Marker({position: {lat: lat_var, lng: long_var}, map: map});
+            var lat_var = <%= @address.lat %>;
+            var long_var = <%= @address.long %>;
+            var location_var = {lat: lat_var, lng: long_var}
+
+            var map = new google.maps.Map(document.getElementById('map'), { center: location_var,
+                                                                              zoom: 16 });
+            var marker = new google.maps.Marker({position: location_var, map: map});
           }
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_map_api_key'] %>&callback=initMap"
