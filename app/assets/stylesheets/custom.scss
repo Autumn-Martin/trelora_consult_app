@@ -20,6 +20,7 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 h1 {
@@ -69,10 +70,10 @@ td {
 }
 
 .prepare-label {
-  background-color: #DDE2F6;
-  color: #353A3F;
+  background-color: #DADADC;
   margin-top: 1vh;
-  text-shadow: 1px 1px #3B3BBF;
+  color: black;
+  text-shadow: 1px 1px black;
 }
 
 
@@ -86,4 +87,10 @@ a:hover {
 
 .form-control {
   font-size: 100%;
+}
+
+.map-label {
+  background-color: #7da72f;
+  color: white;
+  text-shadow: 1px 1px white;
 }

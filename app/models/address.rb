@@ -1,5 +1,5 @@
 class Address
-  attr_reader :street, :city, :state, :zip, :ext_updates, :int_updates, :name, :email, :phone, :opted_in, :found_us, :zillow_estimate, :zillow_low_estimation, :zillow_high_estimation, :home_junction_regional_average, :home_junction_low_estimation, :home_junction_high_estimation, :enthusiasm, :timing, :adopter_type, :stage, :baths, :beds
+  attr_reader :street, :city, :state, :zip, :ext_updates, :int_updates, :name, :email, :phone, :opted_in, :found_us, :zillow_estimate, :zillow_low_estimation, :zillow_high_estimation, :home_junction_regional_average, :home_junction_low_estimation, :home_junction_high_estimation, :enthusiasm, :timing, :adopter_type, :stage, :baths, :beds, :lat, :long
 
   def initialize(data)
     @street = data['listing']['address']['address1']
@@ -25,5 +25,7 @@ class Address
     @stage = data['client']['stage']
     @baths = data['listing']['baths']
     @beds = data['listing']['beds']
+    @lat = data['listing']['coordinates']['latitude'].to_f
+    @long = data['listing']['coordinates']['longitude'].to_f
   end
 end

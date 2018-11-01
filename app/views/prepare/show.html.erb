@@ -152,20 +152,32 @@
       </div>
     </div>
   </div>
-  <div class="container" style="margin-top: 2vh; margin-bottom: 6vh">
+  <div class="container" style="margin-top: 4vh; margin-bottom: 2vh;">
+    <div class="row justify-content-center">
+      <div class="map-label card text-center col-12">
+        <h3 class="map-label card-header">Map: <%= @address.street %></h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="map" >
+  <div class="container">
     <div class="row justify-content-center">
       <div class="card text-center col-12">
-        <h3 class="prepare-label card-header">Map:</h3>
-        <div class="card-body">
-          <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <th scope="col" class="size"><% @address.street %>:</th>
-                <td>link</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <script>
+          function initMap() {
+            var lat_var = <%= @address.lat %>;
+            var long_var = <%= @address.long %>;
+            var location_var = {lat: lat_var, lng: long_var}
+
+            var map = new google.maps.Map(document.getElementById('map'), { center: location_var,
+                                                                              zoom: 16 });
+            var marker = new google.maps.Marker({position: location_var, map: map});
+          }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_map_api_key'] %>&callback=initMap"
+        async defer>
+        </script>
       </div>
     </div>
   </div>
