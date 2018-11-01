@@ -29,48 +29,60 @@
       <%= month_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], class: 'form-control' %>
     </div>
     <%= submit_tag "Save", name: "save", class: "btn btn-primary btn-lg" %>
-    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg" %>
+    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-secondary btn-lg" %>
   <% end %>
 </div>
 
 <div>
-<p id="timer"></p>
-  <script>
-  let time
-    let init = function() {
-      let btn = document.querySelector('.btn-secondary'),
-      startTime = new Date();
+  <p id="timer"></p>
+    <script>
+      const fetch_time = async (time) => {
+        console.log('test')
+        try {
+          console.log('in the try')
+            const rawResponse = await fetch('https://www.trylora.com/api/v0/turing/update_listing_consultation', {
+              method: 'POST',
+              mode: 'cors',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({email: 'steven@trel.co',
+                                    HTTP_AUTH_TOKEN: filled_up,
+                                    address: '1860_south_marion_street-Denver-CO-80210',
+                                    exp_date: time})
+          });
+        //   console.log('rawResponse:', rawResponse);
+        //   const content = await rawResponse.json();
+        //
+          console.log('rawResponse', rawResponse);
+          return content;
+        //
+        } catch (error) {
+          console.log('error', error)
+        }
+      };
+      let time
+      const init = function() {
+        const btn = document.querySelector('.btn-secondary');
+        const startTime = new Date();
 
-      if (btn) {
-        btn.addEventListener('click', function() {
-        let miliSeconds = new Date() - startTime;
-        var hours = Math.floor((miliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((miliSeconds % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((miliSeconds % (1000 * 60)) / 1000);
+        if (btn) {
+          btn.addEventListener('click', function() {
+            console.log('click')
+            let miliSeconds = new Date() - startTime;
+            var hours = Math.floor((miliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((miliSeconds % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((miliSeconds % (1000 * 60)) / 1000);
 
-        time = document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-        })
-      }
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      init();
-    }, false);
-
-    (async () => {
-      const rawResponse = await fetch('https://www.trylora.com/api/v0/turing/properties', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({timer: time})
-
+            time = document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            fetch_time(time)
+          })
+        }
+      };
+      document.addEventListener('DOMContentLoaded', function() {
+        init();
       });
-      const content = await rawResponse.json();
-
-      console.log(content);
-    })();
-
   </script>
 
 </div>

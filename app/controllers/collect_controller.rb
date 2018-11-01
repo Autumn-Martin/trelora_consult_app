@@ -11,7 +11,7 @@ class CollectController < ApplicationController
       render :new
     elsif params[:save_and_finish]
       updated = update_call
-      # redirect_to action: :success, updated: updated
+      redirect_to action: :success, updated: updated
     end
   end
 
@@ -19,6 +19,7 @@ class CollectController < ApplicationController
     token = session[:user_token]
 
     update_uri = URI.parse("https://www.trylora.com/api/v0/turing/update_listing_consultation")
+
     http = Net::HTTP.new(update_uri.host, update_uri.port)
     http.use_ssl = true
 
