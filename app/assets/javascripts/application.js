@@ -24,6 +24,7 @@
 // });
 
 $(document).ready(function() {
+
   $('[data-button]').on('click', function () {
     var HomeInputElement = $('#about_the_home')
     var ListPriceInputElement = $('#recommended_list_price')
@@ -36,7 +37,7 @@ $(document).ready(function() {
     const invalidMessage = "Please fill in the required fields for submission"
 
     function setInvalidCSS(element) {
-      $(element).css({"background-color": "red"});
+      $(element).css({"background-color": "#DDE2F6"});
     }
 
     function setRequiredField(element) {
@@ -51,31 +52,32 @@ $(document).ready(function() {
       setInvalidCSS(HomeInputElement)
       setMessage(invalidMessage)
       event.preventDefault();
-    } else {}
+    }
     if (ListPriceInputElement.val() === '') {
       setInvalidCSS(ListPriceInputElement)
       setMessage(invalidMessage)
       event.preventDefault();
-    } else {}
+    }
     if (CommissionInputElement.val() === '') {
       setInvalidCSS(CommissionInputElement)
       setMessage(invalidMessage)
       event.preventDefault();
-    } else {}
+    }
     if (SellerInputElement.val() === '') {
       setInvalidCSS(SellerInputElement)
       setMessage(invalidMessage)
       event.preventDefault();
-    } else {}
+    }
     if (CCInputElement.val() === '') {
       setInvalidCSS(CCInputElement)
       setMessage(invalidMessage)
       event.preventDefault();
-    } else {}
+    }
     if (CCExpInputElement.val() === '') {
       setInvalidCSS(CCExpInputElement)
       setMessage(invalidMessage)
       event.preventDefault();
     } else {}
+
   });
 });
