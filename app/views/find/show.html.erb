@@ -8,7 +8,7 @@
         <%= value %>
   </div>
 <% end %>
-
+<p class='message'></p>
 <div>
 <%= form_tag prepare_path, :method => :get do %>
   <div class="form-group">
@@ -17,8 +17,8 @@
   </div>
   <p>Or enter an address</p>
   <div class="form-group">
-    <%= text_field_tag(:new_q, nil, placeholder: '123 street, city, state, zipcode', class: 'form-control') %>
+    <%= text_field_tag(:new_q, nil, placeholder: '123 any street, city, state, zipcode', class: 'form-control') %>
   </div>
-  <%= submit_tag 'Find Location', name: "address", class: "btn btn-primary btn-lg" %>
+  <%= submit_tag 'Find Location', name: "address", class: "btn btn-primary btn-lg", data: {'find' => true} %>
   <% end %>
 </div>

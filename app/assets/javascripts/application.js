@@ -20,12 +20,12 @@
 
 $(document).ready(function() {
 
-  $('[data-login]').on('click', function () {
-    var SelectInputElement = $('#about_the_home')
-    var EnterInputElement = $('#recommended_list_price')
-    var submitButtonElement = $('[data-login]')
+  $('[data-find]').on('click', function () {
+    var SelectInputElement = $('#q')
+    var EnterInputElement = $('#new_q')
+    var submitButtonElement = $('[data-find]')
 
-    const invalidMessage = "Please fill in the required fields for submission"
+    const invalidMessage = "Please fill in the required fields"
 
     function setInvalidCSS(element) {
       $(element).css({"background-color": "#DDE2F6"});
@@ -40,7 +40,8 @@ $(document).ready(function() {
     }
 
     if (SelectInputElement.val() === '' && EnterInputElement.val() === '') {
-      setInvalidCSS(HomeInputElement)
+      setInvalidCSS(SelectInputElement)
+      setInvalidCSS(EnterInputElement)
       setMessage(invalidMessage)
       event.preventDefault();
     } else {}
