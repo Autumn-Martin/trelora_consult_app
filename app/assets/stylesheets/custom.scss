@@ -45,7 +45,6 @@ h2 {
   border-color: green;
 }
 
-
 .logo {
   width: 80%;
   margin-bottom: 10%;
@@ -75,7 +74,6 @@ td {
   text-shadow: 1px 1px #3B3BBF;
 }
 
-
 a { color: inherit; }
 a:hover {
   color: inherit;
@@ -98,13 +96,14 @@ a:hover {
   border: 3px solid #333333;
   top: 30%; 
   left: 15%; 
-  height: 20%;
+  height: 25%;
   width: 100%;
   max-width: 700px;
   padding: 20px; 
   z-index: 999;  
   font-size: 2vh;
 }
+
 .btn-outline-primary {
   background: #f2f2f2;
   font-size: 30px;
