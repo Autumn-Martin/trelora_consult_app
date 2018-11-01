@@ -1,26 +1,3 @@
-<div> 
-<p id="timer"></p>
-  <script>
-    let init = function() {
-      let btn = document.querySelector('.btn-secondary'), 
-      startTime = new Date();
-      if (btn) {
-        btn.addEventListener('click', function() {
-        let miliSeconds = new Date() - startTime;
-        var hours = Math.floor((miliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((miliSeconds % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((miliSeconds % (1000 * 60)) / 1000);
-        
-        document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-        })
-      }
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      init();
-    }, false);
-  </script>
-</div>
-
 <div>
   <%= form_tag collect_path, method: :post do %>
     <div class="form-group">
@@ -57,22 +34,40 @@
   <% end %>
 </div>
 
-<button class ="finish" onclick="myFunction()"> <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-secondary btn-lg" %> </button>
-<div id="finishPopup">
-Listing Consultation Complete <br> Time in Home
+<div class ="finish" onclick="openPopup()"> <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-secondary btn-lg" %> </div>
+
+<div class="popup" id="finishPopup">
+  <p> Listing Consultation Complete</p>
+  <p id="timer"></p>
+  <button type="button" class="btn btn-outline-primary" onclick="closePopup()">Dismiss</button>
 </div>
 
 <script>
-function myFunction() {
-    var popup = document.getElementById("finishPopup");
-    if (popup.style.display === "none") {
-        popup.style.display = "block";
-    } else {
-        popup.style.display = "none";
-    }
-}
-</script>
+  function openPopup() {
+      document.getElementById("finishPopup").style.display = "block";
+  }
+  function closePopup() {
+      document.getElementById("finishPopup").style.display = "none";
+  }
 
+  let init = function() {
+    let btn = document.querySelector('.btn-secondary'), 
+    startTime = new Date();
+    if (btn) {
+      btn.addEventListener('click', function() {
+      let miliSeconds = new Date() - startTime;
+      var hours = Math.floor((miliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((miliSeconds % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((miliSeconds % (1000 * 60)) / 1000);
+      
+      document.getElementById("timer").innerHTML = "Time in Home was" + hours + "h " + minutes + "m " + seconds + "s ";
+      })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    init();
+  }, false);
+</script>
 
 
 
