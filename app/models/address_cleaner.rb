@@ -1,44 +1,42 @@
 class AddressCleaner
 
-  def initialize(params, token, addresses)
+  def initialize(params=nil, token=nil, addresses=nil)
     @params = params
-    @q = params["q"]
-    @new_q = params["new_q"]
     @token = token
     @addresses = addresses
   end
 
   def build_params
-    unless @q == ""
+    unless @params["q"] == ""
       @addresses.map do |unclean_address|
         formatted_address = format_address(unclean_address)
-        if formatted_address == @q
-          @q = unclean_address
+        if formatted_address == @params["q"]
+          @params["q"] = unclean_address
         end
       end
-      {address: @q, HTTP_AUTH_TOKEN: @token}
+      {address: @params["q"], HTTP_AUTH_TOKEN: @token}
     else
-      unless @new_q == ""
-        if fix_manual_input_address(@new_q)
-          clean_address = fix_manual_input_address(@new_q)
+      unless @params["new_q"] == ""
+        if fix_manual_input_address(@params["new_q"])
+          clean_address = fix_manual_input_address(@params["new_q"])
           {address: clean_address, HTTP_AUTH_TOKEN: @token}
         end
       end
     end
   end
 
-  private
-    def format_address(unclean_address)
-      address_array = unclean_address.gsub(/[-_]/, " ").split
-      address_array.map do |word|
-        if word.length <= 2
-          word.upcase
-        else
-          word.capitalize
-        end
-      end.join(" ")
-    end
+  def format_address(unclean_address)
+    address_array = unclean_address.gsub(/[-_]/, " ").split
+    address_array.map do |word|
+      if word.length <= 2
+        word.upcase
+      else
+        word.capitalize
+      end
+    end.join(" ")
+  end
 
+  private
     def fix_manual_input_address(unclean_address)
       words = unclean_address.gsub(/[-_,]/, " ").split
       if words.count > 3
