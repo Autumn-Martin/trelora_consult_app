@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if client.authenticate! == 'success'
       session[:user_token] = client.token
       session[:addresses] = client.address
+      session[:email] = client.email
 
       redirect_to '/find'
     else
