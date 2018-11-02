@@ -13,6 +13,7 @@ module Trelora
         client = JSON.parse(response.body)
         if client['data']['user']
           @token = client['data']['user']['HTTP_AUTH_TOKEN']
+          @email = client['data']['user']['email']
           @address = client["data"]["available_address"]["addresses"].map do |key, value|
             value["id"]
           end
@@ -26,6 +27,10 @@ module Trelora
 
       def address
         @address
+      end
+
+      def email
+        @email
       end
 
       private
