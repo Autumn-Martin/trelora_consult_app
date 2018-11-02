@@ -5,17 +5,29 @@ System Dependencies ;
  - Ruby Version > 2.5.1
  - Rails 5.2.1
 
+Gems:
+ - Rails-RSpec for tests (test) 
+https://github.com/rspec/rspec-rails
+ - Bootstrap (production) 
+https://getbootstrap.com
+ - Pry (test) 
+ https://github.com/pry/pry
+ - Figaro (production/test) 
+ https://github.com/laserlemon/figaro
+ - Capybara (test) 
+ https://github.com/teamcapybara/capybara
+ - SimpleCov (test) 
+ https://github.com/colszowka/simplecov
+ - JQuery Rails (all) 
+ https://github.com/rails/jquery-rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Testing:
+ - Run `rspec` for the test suite
+ - SimpleCov data
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
+Initial Setup:
+ - Clone this repository git clone https://github.com/Autumn-Martin/trelora_consult_app
+ - Bundle install
 
 * Database creation
 
