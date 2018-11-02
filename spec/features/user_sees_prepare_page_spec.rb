@@ -32,7 +32,7 @@ feature 'A user' do
     expect(page).to have_css('.zillow_low_estimation')
     expect(page).to have_css('.zillow_high_estimation')
     expect(page).to have_content('Home Junction Pricing Estimates')
-    expect(page).to have_css('.home_juction_regional_average')
+    expect(page).to have_css('.home_junction_regional_average')
     expect(page).to have_css('.home_junction_low_estimation')
     expect(page).to have_css('.home_junction_high_estimation')
     expect(page).to have_content('Listing Details')
