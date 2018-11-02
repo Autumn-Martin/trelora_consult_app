@@ -5,13 +5,13 @@ class CollectController < ApplicationController
   end
 
   def create
-    service = TreloraService.new(collect_params)
+    update_service = Trelora::REST::UpdateService.new(collect_params)
     if params[:save]
-      service.update_listing_information(token, email, address)
+      update_service.update_listing_information(token, email, address)
       render :new
     elsif params[:save_and_finish]
       sleep(3)
-      updated = service.update_listing_information(token, email, address)
+      updated = update_service.update_listing_information(token, email, address)
       redirect_to action: :success, updated: updated
     end
   end
