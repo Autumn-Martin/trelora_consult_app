@@ -31,6 +31,6 @@ class Address
   end
 
   def zillow_address
-    @zillow_address ||= ZillowService.new(@street, @city, @state, @zip).retrieve_zillow
+    @zillow_address ||= ZillowSearch.new(@street, @city, @state, @zip).retrieve_zillow
   end
 end

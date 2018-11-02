@@ -1,11 +1,9 @@
 require "net/http"
 require "uri"
 class ZillowService
-  def initialize(street, city, state, zip)
-    @street = street
-    @city = city
-    @state = state
-    @zip = zip
+  def initialize(street_address, city_state)
+    @street_address = street_address
+    @city_state = city_state
   end
 
   def retrieve_zillow
@@ -36,16 +34,8 @@ class ZillowService
     Net::HTTP.new(api_url.host, api_url.port)
   end
 
-  def street_address
-    @street.gsub(' ', '+')
-  end
-
-  def city_state
-    x = @city + "%2C+" + @state + "%2C+" + @zip
-  end
-
   def api_url
-    URI.join("http://www.zillow.com/webservice/", "GetDeepSearchResults.htm?zws-id=X1-ZWz18a4pbgiqyz_493z4&address=#{street_address}&citystatezip=#{city_state}")
+    URI.join("http://www.zillow.com/webservice/", "GetDeepSearchResults.htm?zws-id=X1-ZWz18a4pbgiqyz_493z4&address=#{@street_address}&citystatezip=#{@city_state}")
   end
 
   def request
