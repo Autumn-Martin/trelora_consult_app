@@ -15,4 +15,9 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+    session.delete(:user_token)
+    redirect_to login_path, notice: 'You have been successfully logged out!'
+  end
 end

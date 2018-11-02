@@ -1,6 +1,70 @@
-<%= @updated["consultation"]["about_this_home"] %>
-<%= @updated["consultation"]["commission"] %>
-<%= @updated["consultation"]["about_the_seller"] %>
-<%= @updated["consultation"]["recommended_list_price"] %>
-<%= @updated["consultation"]["credit_card"] %>
-<%= @updated["consultation"]["exp_date"] %>
+<nav class="navbar sticky-top navbar-light" style="background-color: white; text-align: left; border-bottom: 0.5vh solid #7da72f">
+  <a class="navbar-brand" href="#" style="margin-bottom: 0.5vh">
+    <%= image_tag("TRELORA-Logo.png", class:"tiny_logo")%>
+  </a>
+  <a class="font-weight-bold" style="color: #94c63b;" href="#"><h3>Success</h3></a>
+  <%= link_to "Logout", logout_path, class: "btn btn-primary btn-lg" %>
+</nav>
+<div>
+  <div class="container" style="padding-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="prepare-label card-header" >About the home:</h3>
+        <div class="card-body">
+          <p class="card-text"><%= @updated["consultation"]["about_this_home"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="prepare-label card-header" >Recommended list price:</h3>
+        <div class="card-body">
+          <p class="card-text">$<%= @updated["consultation"]["recommended_list_price"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="prepare-label card-header" >Buyer agent commission:</h3>
+        <div class="card-body">
+          <p class="card-text"><%= @updated["consultation"]["commission"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="prepare-label card-header" >About the seller:</h3>
+        <div class="card-body">
+          <p class="card-text"><%= @updated["consultation"]["about_the_seller"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="prepare-label card-header" >Credit card number:</h3>
+        <div class="card-body">
+          <p class="card-text"><%= @updated["consultation"]["credit_card"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 2vh">
+    <div class="row justify-content-center">
+      <div class="card text-center col-12">
+        <h3 class="prepare-label card-header" >Credit card expiration date:</h3>
+        <div class="card-body">
+          <p class="card-text"><%= @updated["consultation"]["exp_date"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
