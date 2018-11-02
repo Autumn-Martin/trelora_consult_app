@@ -10,7 +10,7 @@ class CollectController < ApplicationController
       update_service.update_listing_information(token, email, address)
       render :new
     elsif params[:save_and_finish]
-      sleep(3)
+      # sleep(3)
       updated = update_service.update_listing_information(token, email, address)
       redirect_to action: :success, updated: updated
     end
