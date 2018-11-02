@@ -144,7 +144,9 @@
               </tr>
               <tr>
                 <th scope="col" class="stage">Zillow:</th>
-                <td>link</td>
+                <td style="text-decoration: underline;">
+                  <%= link_to "#{@address.street}", "#{@address.zillow_address}" %>
+                </td>
               </tr>
             </tbody>
           </table>
