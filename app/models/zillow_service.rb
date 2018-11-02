@@ -44,7 +44,7 @@ class ZillowService
     x = @city + "%2C+" + @state + "%2C+" + @zip
   end
 
-  def parsed_uri
+  def api_url
     URI.join("http://www.zillow.com/webservice/", "GetDeepSearchResults.htm?zws-id=X1-ZWz18a4pbgiqyz_493z4&address=#{street_address}&citystatezip=#{city_state}")
   end
 
