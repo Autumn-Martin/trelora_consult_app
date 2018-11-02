@@ -1,8 +1,8 @@
 require "net/http"
 require "uri"
 class CollectController < ApplicationController
-  # def new
-  # end
+  def new
+  end
 
   def create
     update_service = Trelora::REST::UpdateService.new(collect_params)
