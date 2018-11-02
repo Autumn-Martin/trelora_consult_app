@@ -30,7 +30,7 @@ module Trelora
                               about_the_seller: @seller,
                               credit_card: @credit_card,
                               exp_date: @expiration_date
-                             }
+                            }
         post_request.set_form_data(update_attributes)
         response = http.request(post_request)
 
