@@ -94,8 +94,11 @@ a:hover {
   text-shadow: 1px 1px white;
 }
 
+.message {
+  color: red;
+  
 * {box-sizing: border-box;}
-
+  
 .popup {
   display: none;
   position: fixed; 
