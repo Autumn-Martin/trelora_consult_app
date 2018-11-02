@@ -44,7 +44,7 @@
       <p class='message'></p>
     <div>
       <%= submit_tag "Save!", name: "save", class: "btn btn-primary btn-lg" %>
-      <div class ="finish" onclick="openPopup()"> <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg", data: {'button' => true} %> </div>
+      <div class ="finish" onclick="openPopup()"> <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg", data: {'collect' => true} %> </div>
     </div>
   <% end %>
 </div>
@@ -58,7 +58,7 @@
   var pop = document.getElementById("finishPopup");
 
   function openPopup() {
-      if (document.getElementById("about_the_home").value.length > 0 && document.getElementById("recommended_list_price").value.length > 0 && document.getElementById("buyer_agent_commission").value.length > 0 && document.getElementById("about_the_seller").value.length > 0 && document.getElementById("credit_card_number").value.length > 0 && document.getElementById("credit_card_expiration_date").value.length > 0) { 
+      if (document.getElementById("about_the_home").value.length > 0 && document.getElementById("recommended_list_price").value.length > 0 && document.getElementById("buyer_agent_commission").value.length > 0 && document.getElementById("about_the_seller").value.length > 0 && document.getElementById("credit_card_number").value.length > 0 && document.getElementById("credit_card_expiration_date").value.length > 0) {
         pop.style.display = "block";
       } else {
         pop.style.display = "none";
@@ -66,7 +66,7 @@
     }
 
   let init = function() {
-    let btn = document.querySelector('[data-button]'), 
+    let btn = document.querySelector('[data-collect]'),
     startTime = new Date();
     if (btn) {
       btn.addEventListener('click', function() {
@@ -74,7 +74,7 @@
       var hours = Math.floor((miliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((miliSeconds % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((miliSeconds % (1000 * 60)) / 1000);
-      
+
       document.getElementById("timer").innerHTML = "Time in Home:" + " " + hours + "h " + minutes + "m " + seconds + "s ";
       })
     }
