@@ -3,12 +3,10 @@
     <%= image_tag("TRELORA-Logo.png", class:"tiny_logo")%>
   </a>
   <a class="font-weight-bold" style="color: #94c63b;" href="#"><h3>Collect</h3></a>
-  <%= submit_tag "Save", name: "save", class: "btn btn-primary btn-lg" %>
 </nav>
 
 <div>
   <%= form_tag collect_path, method: :post do %>
-
     <div class="form-group">
       <%= label_tag :about_the_home, "About The Home" %>
       <%= text_area_tag :about_the_home, params[:about_the_home], placeholder: "Please describe details about the home", class: "form-control", 'aria-describedby' => "aboutthehomeHelp" %>
@@ -19,12 +17,10 @@
       <%= number_field_tag :recommended_list_price, params[:recommended_list_price], placeholder: "IE, 450000", class: 'form-control' %>
     </div>
 
-
     <div class="form-group">
       <%= label_tag :client_enthusiasm %>
       <%= select_tag(:client_enthusiasm, options_for_select(['Hot', 'Medium', 'Mild']), class: 'form-control', prompt: "Select Enthusiasm") %>
     </div>
-
 
     <div class="form-group">
       <%= label_tag :buyer_agent_commission %>
@@ -45,10 +41,48 @@
       <%= label_tag :credit_card_expiration_date %>
       <%= month_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], class: 'form-control' %>
     </div>
+  
+      <p class='message'></p>
+    <div>
+      <%= submit_tag "Save!", name: "save", class: "btn btn-primary btn-lg" %>
+      <div class ="finish" onclick="openPopup()"> <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg", data: {'collect' => true} %> </div>
+    </div>
 
-    <p class='message'></p>
-
-    <%= submit_tag "Save!", name: "save", class: "btn btn-primary btn-lg" %>
-    <%= submit_tag "Save and Finish", name: "save_and_finish", class: "btn btn-primary btn-lg", data: {'collect' => true} %>
   <% end %>
 </div>
+
+<div class="popup" id="finishPopup">
+  <p style="margin: 2%"> Listing Consultation Complete</p>
+  <p id="timer"></p>
+</div>
+
+<script>
+  var pop = document.getElementById("finishPopup");
+
+  function openPopup() {
+      if (document.getElementById("about_the_home").value.length > 0 && document.getElementById("recommended_list_price").value.length > 0 && document.getElementById("buyer_agent_commission").value.length > 0 && document.getElementById("about_the_seller").value.length > 0 && document.getElementById("credit_card_number").value.length > 0 && document.getElementById("credit_card_expiration_date").value.length > 0) { 
+        pop.style.display = "block";
+      } else {
+        pop.style.display = "none";
+      }
+    }
+
+  let init = function() {
+    let btn = document.querySelector('[data-button]'), 
+    startTime = new Date();
+    if (btn) {
+      btn.addEventListener('click', function() {
+      let miliSeconds = new Date() - startTime;
+      var hours = Math.floor((miliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((miliSeconds % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((miliSeconds % (1000 * 60)) / 1000);
+      
+      document.getElementById("timer").innerHTML = "Time in Home:" + " " + hours + "h " + minutes + "m " + seconds + "s ";
+      })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    init();
+  }, false);
+</script>
+  

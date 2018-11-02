@@ -10,6 +10,7 @@ class CollectController < ApplicationController
       update_call
       render :new
     elsif params[:save_and_finish]
+      sleep(3)
       updated = update_call
       redirect_to action: :success, updated: updated
     end
