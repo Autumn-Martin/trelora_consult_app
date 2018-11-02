@@ -129,4 +129,17 @@ a:hover {
 
 .link {
   text-decoration: underline;
+  text-decoration-color: #486984;
+  color: #486984;
+}
+.link-light {
+  text-decoration: underline;
+  text-decoration-color: #486984;
+  color: #486984;
+  text-shadow: 1px 1px #486984;
+}
+.link-dark {
+  text-decoration: underline;
+  text-decoration-color: #517694;
+  color: #517694;
 }
