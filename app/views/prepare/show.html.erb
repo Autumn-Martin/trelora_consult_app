@@ -24,11 +24,11 @@
               </tr>
               <tr>
                 <th scope="col">Email:</th>
-                <td class="email"><a href="mailto:<%@address.email%>"><%= @address.email %></a></td>
+                <td class="link-dark email"><a href="mailto:<%@address.email%>"><%= @address.email %></a></td>
               </tr>
               <tr>
                 <th scope="col">Phone:</th>
-                <td class="phone"><a href="tel:<%@address.phone%>"><%= @address.phone %></a></td>
+                <td class="link-dark phone"><a href="tel:<%@address.phone%>"><%= @address.phone %></a></td>
               </tr>
             </tbody>
           </table>
@@ -144,7 +144,7 @@
               </tr>
               <tr>
                 <th scope="col">Zillow:</th>
-                <td class="link">
+                <td class="link-dark">
                   <%= link_to "View Home", "#{@address.zillow_address}" %>
                 </td>
               </tr>
@@ -158,7 +158,7 @@
     <div class="row justify-content-center">
       <div class="map-label card text-center col-12">
         <h3 class="map-label card-header">Directions:
-          <span style="text-decoration: underline;" class="link">
+          <span style="text-decoration: underline;" class="link-light">
            <%= link_to "#{@address.street}", "https://www.google.com/maps/search/?api=1&query=#{@address.url_street}%2C%20#{@address.city}%2C%20#{@address.state}%2C%20#{@address.zip}" %>
           </span>
         </h3>
