@@ -20,14 +20,42 @@
 
 $(document).ready(function() {
 
-  $('[data-button]').on('click', function () {
+  $('[data-find]').on('click', function () {
+    var SelectInputElement = $('#q')
+    var EnterInputElement = $('#new_q')
+    var submitButtonElement = $('[data-find]')
+
+    const invalidMessage = "Please fill in the required fields"
+
+    function setInvalidCSS(element) {
+      $(element).css({"background-color": "#DDE2F6"});
+    }
+
+    function setRequiredField(element) {
+      $(element).required(true);
+    }
+
+    function setMessage(message) {
+      $('.message').text(message);
+    }
+
+    if (SelectInputElement.val() === '' && EnterInputElement.val() === '') {
+      setInvalidCSS(SelectInputElement)
+      setInvalidCSS(EnterInputElement)
+      setMessage(invalidMessage)
+      event.preventDefault();
+    } else {}
+});
+
+  $('[data-collect]').on('click', function () {
     var HomeInputElement = $('#about_the_home')
     var ListPriceInputElement = $('#recommended_list_price')
+    var EnthusiasmInputElement = $('#client_enthusiasm')
     var CommissionInputElement = $('#buyer_agent_commission')
     var SellerInputElement = $('#about_the_seller')
     var CCInputElement = $('#credit_card_number')
     var CCExpInputElement = $('#credit_card_expiration_date')
-    var submitButtonElement = $('[data-button]')
+    var submitButtonElement = $('[data-collect]')
 
     const invalidMessage = "Please fill in the required fields for submission"
 
