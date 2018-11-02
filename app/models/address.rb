@@ -1,8 +1,9 @@
 class Address
-  attr_reader :street, :city, :state, :zip, :ext_updates, :int_updates, :name, :email, :phone, :opted_in, :found_us, :zillow_estimate, :zillow_low_estimation, :zillow_high_estimation, :home_junction_regional_average, :home_junction_low_estimation, :home_junction_high_estimation, :enthusiasm, :timing, :adopter_type, :stage, :baths, :beds, :lat, :long
+  attr_reader :street, :city, :state, :zip, :ext_updates, :int_updates, :name, :email, :phone, :opted_in, :found_us, :zillow_estimate, :zillow_low_estimation, :zillow_high_estimation, :home_junction_regional_average, :home_junction_low_estimation, :home_junction_high_estimation, :enthusiasm, :timing, :adopter_type, :stage, :baths, :beds, :lat, :long, :url_street
 
   def initialize(data)
     @street = data['listing']['address']['address1']
+    @url_street = data['listing']['address']['address1'].gsub(' ', '%20')
     @city = data['listing']['address']['city']
     @state = data['listing']['address']['state']
     @zip = data['listing']['address']['zip']

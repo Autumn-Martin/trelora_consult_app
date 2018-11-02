@@ -156,6 +156,7 @@
     <div class="row justify-content-center">
       <div class="map-label card text-center col-12">
         <h3 class="map-label card-header">Map: <%= @address.street %></h3>
+        <%= link_to "#{@address.street}", "https://www.google.com/maps/search/?api=1&query=#{@address.url_street}%2C%20#{@address.city}%2C%20#{@address.state}%2C%20#{@address.zip}" %>
       </div>
     </div>
   </div>
